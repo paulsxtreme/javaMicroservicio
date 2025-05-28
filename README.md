@@ -226,7 +226,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ```
 ### 8. Eliminar movimiento
 
-### 8. Verificar si existe el movimiento 32
+### 8. Verificar si existe el movimiento "32"
 **Ejemplo:** `DELETE http://localhost:8080/movimientos/32`
 
 
