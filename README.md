@@ -1,2 +1,245 @@
-# javaMicroservicio
-proyecto java microservicio Bancario con java y maven
+# 🏦 Proyecto Microservicio Bancario
+
+Proyecto microservicio Bancario desarrollado con Java y Maven que permite realizar operaciones bancarias como crear, editar y eliminar clientes, así como generar movimientos para acreditar y debitar el estado de cuenta.
+
+## 🔧 Tecnologías
+
+- Java
+- Spring Boot
+- Maven
+- PostgreSQL
+- JPA/Hibernate
+
+## 🚀 Operaciones de Clientes
+
+### 1. Crear Cliente
+
+**Endpoint:** `POST http://localhost:8080/clientes`
+
+```json
+{
+  "persona": {
+    "nombre": "Carlos Sanchez",
+    "genero": "Masculino",
+    "edad": 40,
+    "identificacion": "1712131415",
+    "direccion": "Av. Galo Plaza Lasso N22-222",
+    "telefono": "0987654321"
+  },
+  "contrasena": "Mipass123",
+  "estado": true
+}
+```
+
+**Resultado (200 OK):**
+```json
+{
+  "clienteid": 10,
+  "persona": {
+    "id": 10,
+    "nombre": "Carlos Sanchez",
+    "genero": "Masculino",
+    "edad": 40,
+    "identificacion": "1712131415",
+    "direccion": "Av. Galo Plaza Lasso N22-222",
+    "telefono": "0987654321",
+    "version": 0
+  },
+  "contrasena": "Mipass123",
+  "estado": true,
+  "version": null
+}
+```
+
+### 2. Editar Cliente
+
+**Ejemplo:** `PUT http://localhost:8080/clientes/9`
+
+```json
+{
+  "persona": {
+    "nombre": "Paul Salazar",
+    "genero": "Masculino",
+    "edad": 36,
+    "identificacion": "1725544444",
+    "direccion": "Av. Naciones unidas N10-100",
+    "telefono": "0999999999"
+  },
+  "contrasena": "Paul4567",
+  "estado": true
+}
+```
+
+**Rusultado (200 OK):**
+```json
+{
+  "clienteid": 9,
+  "persona": {
+    "id": 9,
+    "nombre": "Paul Salazar",
+    "genero": "Masculino",
+    "edad": 36,
+    "identificacion": "1725544444",
+    "direccion": "Av. Naciones unidas N10-100",
+    "telefono": "0999999999",
+    "version": 0
+  },
+  "contrasena": "Paul4567",
+  "estado": true,
+  "version": null
+}
+```
+
+### 3. Eliminar Cliente
+
+**Ejemplo:** `DELETE http://localhost:8080/clientes/8`
+
+**Resultado (204 No Content)**
+
+## 📊 Operaciones de Cuentas
+
+### 4. Crear Cuenta
+
+**Endpoint:** `POST http://localhost:8080/cuentas`
+
+```json
+{
+  "clienteid": 10,
+  "tipocuenta": "AHORRO",
+  "saldoinicial": 1000.00,
+  "estado": true
+}
+```
+
+**Resultado (201 Created):**
+```json
+{
+  "numerocuenta": 5,
+  "clienteid": 10,
+  "nombreCliente": "Carlos Sanchez",
+  "tipocuenta": "Ahorros",
+  "saldoinicial": 1000.00,
+  "estado": true
+}
+```
+
+### 5. Editar Cuenta
+
+**Ejemplo:** `PUT http://localhost:8080/cuentas/5`
+
+```json
+{
+  "clienteid": 10,
+  "tipocuenta": "CORRIENTE",
+  "saldoinicial": 1000.00,
+  "estado": true
+}
+```
+
+**Resultado (200 OK):**
+```json
+{
+  "numerocuenta": 5,
+  "clienteid": 10,
+  "nombreCliente": "Carlos Sanchez",
+  "tipocuenta": "CORRIENTE",
+  "saldoinicial": 1000.00,
+  "estado": true
+}
+```
+
+## 💰 Operaciones de Movimientos
+
+### 6. Realizar Depósito
+
+**Endpoint:** `POST http://localhost:8080/movimientos`
+
+```json
+{
+  "numerocuenta": 4,
+  "tipomovimiento": "CREDITO",
+  "valor": 500.00
+}
+```
+
+**Resultado (201 Created):**
+```json
+{
+  "id": 6,
+  "numerocuenta": 4,
+  "fecha": "2025-05-20T15:30:45-05:00",
+  "tipomovimiento": "CREDITO",
+  "valor": 500.00,
+  "saldo": 5500.00,
+  "nombreCliente": "Marianela Montalvo",
+  "tipoCuenta": "Ahorros"
+}
+```
+
+### 7. Realizar Retiro
+
+**Endpoint:** `POST http://localhost:8080/movimientos`
+
+```json
+{
+  "numerocuenta": 4,
+  "tipomovimiento": "DEBITO",
+  "valor": 300.00
+}
+```
+
+**Resultado (201 Created):**
+```json
+{
+  "id": 7,
+  "numerocuenta": 4,
+  "fecha": "2025-05-20T15:35:20-05:00",
+  "tipomovimiento": "DEBITO",
+  "valor": -300.00,
+  "saldo": 5200.00,
+  "nombreCliente": "Marianela Montalvo",
+  "tipoCuenta": "Ahorros"
+}
+```
+
+### 8. Consultar Movimientos
+
+**Ejemplo:** `GET http://localhost:8080/movimientos/cuenta/4`
+
+**Resultado (200 OK):**
+```json
+[
+  {
+    "id": 5,
+    "numerocuenta": 4,
+    "fecha": "2025-05-01T10:15:00-05:00",
+    "tipomovimiento": "CREDITO",
+    "valor": 5000.00,
+    "saldo": 5000.00,
+    "nombreCliente": "Marianela Montalvo",
+    "tipoCuenta": "Ahorros"
+  },
+  {
+    "id": 6,
+    "numerocuenta": 4,
+    "fecha": "2025-05-20T15:30:45-05:00",
+    "tipomovimiento": "CREDITO",
+    "valor": 500.00,
+    "saldo": 5500.00,
+    "nombreCliente": "Marianela Montalvo",
+    "tipoCuenta": "Ahorros"
+  },
+  {
+    "id": 7,
+    "numerocuenta": 4,
+    "fecha": "2025-05-20T15:35:20-05:00",
+    "tipomovimiento": "DEBITO",
+    "valor": -300.00,
+    "saldo": 5200.00,
+    "nombreCliente": "Marianela Montalvo",
+    "tipoCuenta": "Ahorros"
+  }
+]
+```
+
+
