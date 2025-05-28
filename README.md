@@ -52,6 +52,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ```
 
 ### 2. Editar Cliente
+### Verificar si existe el cliente o el "id"
 
 **Ejemplo:** `PUT http://localhost:8080/clientes/9`
 
@@ -91,6 +92,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ```
 
 ### 3. Eliminar Cliente
+### Verificar si existe el cliente o el "id"
 
 **Ejemplo:** `DELETE http://localhost:8080/clientes/8`
 
@@ -125,6 +127,8 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 ### 5. Editar Cuenta
 
+### Verificar si existe la cuenta "5" y el clienteid: "10", se puede modificar el tipo de cuenta y el saldo inicial.
+
 **Ejemplo:** `PUT http://localhost:8080/cuentas/5`
 
 ```json
@@ -149,9 +153,28 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ```
 
 ## 💰 Operaciones de Movimientos
+### 6. Consultar movimientos
+### Verificar si existe el numerocuenta "4".
+**Endpoint:** `GET http://localhost:8080/movimientos/cuenta/4`
+
+```json
+ {
+        "id": 8,
+        "numerocuenta": 4,
+        "fecha": "2025-05-28T15:08:25.620726-05:00",
+        "tipomovimiento": "DEBITO",
+        "valor": -1000.00,
+        "saldo": 4000.00,
+        "nombreCliente": "Carlos Alberto Rodríguez",
+        "tipoCuenta": "CORRIENTE",
+        "version": null
+    }
+```
+
+
 
 ### 6. Realizar Depósito
-
+### Verificar si existe el numerocuenta "4".
 **Endpoint:** `POST http://localhost:8080/movimientos`
 
 ```json
@@ -177,7 +200,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ```
 
 ### 7. Realizar Retiro
-
+### Verificar si existe el numerocuenta "4".
 **Endpoint:** `POST http://localhost:8080/movimientos`
 
 ```json
@@ -202,44 +225,68 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 }
 ```
 
-### 8. Consultar Movimientos
+### 8. Generar Reporte
 
-**Ejemplo:** `GET http://localhost:8080/movimientos/cuenta/4`
+**Ejemplo:** `GET http://localhost:8080/reportes?clienteid=3&fechaInicio=2025-05-01&fechaFin=2025-05-31http://localhost:8080/reportes?clienteid=3&fechaInicio=2025-05-01&fechaFin=2025-05-31`
 
 **Resultado (200 OK):**
+
 ```json
-[
-  {
-    "id": 5,
-    "numerocuenta": 4,
-    "fecha": "2025-05-01T10:15:00-05:00",
-    "tipomovimiento": "CREDITO",
-    "valor": 5000.00,
-    "saldo": 5000.00,
-    "nombreCliente": "Marianela Montalvo",
-    "tipoCuenta": "Ahorros"
-  },
-  {
-    "id": 6,
-    "numerocuenta": 4,
-    "fecha": "2025-05-20T15:30:45-05:00",
-    "tipomovimiento": "CREDITO",
-    "valor": 500.00,
-    "saldo": 5500.00,
-    "nombreCliente": "Marianela Montalvo",
-    "tipoCuenta": "Ahorros"
-  },
-  {
-    "id": 7,
-    "numerocuenta": 4,
-    "fecha": "2025-05-20T15:35:20-05:00",
-    "tipomovimiento": "DEBITO",
-    "valor": -300.00,
-    "saldo": 5200.00,
-    "nombreCliente": "Marianela Montalvo",
-    "tipoCuenta": "Ahorros"
-  }
-]
+{
+    "nombreCliente": "Carlos Alberto Rodríguez",
+    "identificacion": "1122334455",
+    "cuentas": [
+        {
+            "numeroCuenta": 4,
+            "tipoCuenta": "CORRIENTE",
+            "saldoDisponible": 5000.00,
+            "movimientos": [
+                {
+                    "fecha": "2025-05-28T15:08:25.620726-05:00",
+                    "tipoMovimiento": "DEBITO",
+                    "valor": -500.00,
+                    "saldo": 5500.00,
+                    "version": null
+                },
+                {
+                    "fecha": "2025-05-28T15:08:25.620726-05:00",
+                    "tipoMovimiento": "CREDITO",
+                    "valor": 2000.00,
+                    "saldo": 6000.00,
+                    "version": null
+                },
+                {
+                    "fecha": "2025-05-28T15:08:25.620726-05:00",
+                    "tipoMovimiento": "DEBITO",
+                    "valor": -1000.00,
+                    "saldo": 4000.00,
+                    "version": null
+                },
+                {
+                    "fecha": "2025-05-28T15:32:24.278909-05:00",
+                    "tipoMovimiento": "CREDITO",
+                    "valor": 314.26,
+                    "saldo": 5814.26,
+                    "version": null
+                },
+                {
+                    "fecha": "2025-05-28T15:32:28.736751-05:00",
+                    "tipoMovimiento": "CREDITO",
+                    "valor": 314.26,
+                    "saldo": 6128.52,
+                    "version": null
+                },
+                {
+                    "fecha": "2025-05-28T17:10:15.056068-05:00",
+                    "tipoMovimiento": "CREDITO",
+                    "valor": 350.26,
+                    "saldo": 6478.78,
+                    "version": null
+                }
+            ]
+        }
+    ]
+}
 ```
 
 
