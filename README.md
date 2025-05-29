@@ -12,7 +12,11 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 ## 🚀 1. Operaciones de Clientes
 
-### 1.1 Crear Cliente
+### 1.1 Consultar clientes
+
+**Endpoint:** `GET http://localhost:8080/clientes`
+
+### 1.2 Crear Cliente
 
 **Endpoint:** `POST http://localhost:8080/clientes`
 
@@ -52,7 +56,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ```
 
 ## 
-### 1.2 Editar Cliente
+### 1.3 Editar Cliente
 ### Verificar si existe el cliente o el "id"
 
 **Ejemplo:** `PUT http://localhost:8080/clientes/9`
@@ -92,7 +96,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 }
 ```
 
-### 1.3 Eliminar Cliente
+### 1.4 Eliminar Cliente
 ### Verificar si existe el cliente o el "id"
 
 **Ejemplo:** `DELETE http://localhost:8080/clientes/8`
