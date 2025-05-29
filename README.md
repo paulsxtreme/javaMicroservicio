@@ -52,7 +52,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ```
 
 ## 
-## 2. Editar Cliente
+### 2. Editar Cliente
 ### Verificar si existe el cliente o el "id"
 
 **Ejemplo:** `PUT http://localhost:8080/clientes/9`
