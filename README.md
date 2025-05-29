@@ -109,7 +109,12 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 ## 📊2. Operaciones de Cuentas
 
-### 2.1 Crear Cuenta
+
+### 2.1 Consultar clientes
+
+**Endpoint:** `GET http://localhost:8080/cuentas`
+
+### 2.2 Crear Cuenta
 
 **Endpoint:** `POST http://localhost:8080/cuentas`
 
@@ -134,7 +139,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 }
 ```
 
-### 2.2 Editar Cuenta
+### 2.3 Editar Cuenta
 
 ### Verificar si existe la cuenta "5" y el clienteid: "10", se puede modificar el tipo de cuenta y el saldo inicial.
 
@@ -160,7 +165,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
   "estado": true
 }
 ```
-### 2.3 Eliminar Cuenta
+### 2.4 Eliminar Cuenta
 
 ### Verificar si existe la cuenta "5"
 
@@ -171,8 +176,8 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ```
 
 ##
-## 💰 Operaciones de Movimientos
-### 6. Consultar movimientos
+## 💰3. Operaciones de Movimientos
+### 3.1 Consultar movimientos
 ### Verificar si existe el numerocuenta "4".
 **Endpoint:** `GET http://localhost:8080/movimientos/cuenta/4`
 
@@ -192,7 +197,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 
 
-### 6. Realizar Depósito
+### 3.2 crear movimiento "Realizar Depósito"
 ### Verificar si existe el numerocuenta "4".
 **Endpoint:** `POST http://localhost:8080/movimientos`
 
