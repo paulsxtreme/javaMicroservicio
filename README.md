@@ -237,8 +237,11 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 **Ejemplo:** `DELETE http://localhost:8080/movimientos/32`
 
 
-
+##
 ### 8. Generar Reporte
+##
+
+
 
 **Ejemplo:** `GET http://localhost:8080/reportes?clienteid=3&fechaInicio=2025-05-01&fechaFin=2025-05-31http://localhost:8080/reportes?clienteid=3&fechaInicio=2025-05-01&fechaFin=2025-05-31`
 
