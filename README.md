@@ -95,9 +95,8 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ### 3. Eliminar Cliente
 ### Verificar si existe el cliente o el "id"
 
-```
 **Ejemplo:** `DELETE http://localhost:8080/clientes/8`
-```
+
 
 **Resultado (204 No Content)**
 
