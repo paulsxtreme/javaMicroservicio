@@ -59,7 +59,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ### 1.3 Editar Cliente
 ### Verificar si existe el cliente o el "id"
 
-**Ejemplo:** `PUT http://localhost:8080/clientes/9`
+**Endpoint:** `PUT http://localhost:8080/clientes/9`
 
 ```json
 {
@@ -99,7 +99,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ### 1.4 Eliminar Cliente
 ### Verificar si existe el cliente o el "id"
 
-**Ejemplo:** `DELETE http://localhost:8080/clientes/8`
+**Endpoint:** `DELETE http://localhost:8080/clientes/8`
 
 
 **Resultado (204 No Content)**
@@ -138,7 +138,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 ### Verificar si existe la cuenta "5" y el clienteid: "10", se puede modificar el tipo de cuenta y el saldo inicial.
 
-**Ejemplo:** `PUT http://localhost:8080/cuentas/5`
+**Endpoint:** `PUT http://localhost:8080/cuentas/5`
 
 ```json
 {
@@ -164,7 +164,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 ### Verificar si existe la cuenta "5"
 
-**Ejemplo:** `DELETE http://localhost:8080/cuentas/5`
+**Endpoint:** `DELETE http://localhost:8080/cuentas/5`
 
 ```
 **Resultado (204 No Content)**
@@ -246,7 +246,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ### 8. Eliminar movimiento
 
 ### 8. Verificar si existe el movimiento "32"
-**Ejemplo:** `DELETE http://localhost:8080/movimientos/32`
+**Endpoint:** `DELETE http://localhost:8080/movimientos/32`
 
 
 ##
@@ -255,7 +255,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 
 
-**Ejemplo:** `GET http://localhost:8080/reportes?clienteid=3&fechaInicio=2025-05-01&fechaFin=2025-05-31http://localhost:8080/reportes?clienteid=3&fechaInicio=2025-05-01&fechaFin=2025-05-31`
+**Endpoint:** `GET http://localhost:8080/reportes?clienteid=3&fechaInicio=2025-05-01&fechaFin=2025-05-31http://localhost:8080/reportes?clienteid=3&fechaInicio=2025-05-01&fechaFin=2025-05-31`
 
 **Resultado (200 OK):**
 
