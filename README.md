@@ -254,6 +254,31 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 **Endpoint:** `DELETE http://localhost:8080/movimientos/32`
 
 
+### 7. Saldo no disponible
+### Verificar si existe el numerocuenta "20" y valor inicial en cero.
+**Endpoint:** `POST http://localhost:8080/movimientos`
+
+```json
+{
+  "numerocuenta": 20,
+  "tipomovimiento": "DEBITO",
+  "valor": 100.00
+}
+```
+
+**Resultado (400 Bad Request):**
+```json
+{
+    "timestamp": "2025-05-29T10:20:47.4334519-05:00",
+    "status": 400,
+    "error": "Bad Request",
+    "message": "Saldo no disponible",
+    "path": "/movimientos",
+    "errors": []
+}
+```
+
+
 ##
 ### 8. Generar Reporte
 ##
