@@ -103,7 +103,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 
 
-## 📊2 Operaciones de Cuentas
+## 📊2. Operaciones de Cuentas
 
 ### 2.1 Crear Cuenta
 
@@ -130,7 +130,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 }
 ```
 
-### 5. Editar Cuenta
+### 2.2 Editar Cuenta
 
 ### Verificar si existe la cuenta "5" y el clienteid: "10", se puede modificar el tipo de cuenta y el saldo inicial.
 
@@ -156,7 +156,15 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
   "estado": true
 }
 ```
+### 2.3 Eliminar Cuenta
 
+### Verificar si existe la cuenta "5"
+
+**Ejemplo:** `DELETE http://localhost:8080/cuentas/5`
+
+```
+**Resultado (204 No Content)**
+```
 
 ##
 ## 💰 Operaciones de Movimientos
