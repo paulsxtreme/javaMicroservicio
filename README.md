@@ -141,7 +141,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 ### 2.3 Editar Cuenta
 
-### Verificar si existe la cuenta "5" y el clienteid: "10", se puede modificar el tipo de cuenta y el saldo inicial.
+### Verificar si existe la cuenta "5" y el clienteid: "10", se puede modificar el tipo de cuenta y el estado.
 
 **Endpoint:** `PUT http://localhost:8080/cuentas/5`
 
@@ -223,7 +223,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 }
 ```
 
-### 7. Realizar Retiro
+### 7. crear movimiento "Realizar Retiro"
 ### Verificar si existe el numerocuenta "4".
 **Endpoint:** `POST http://localhost:8080/movimientos`
 
