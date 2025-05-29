@@ -223,7 +223,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 }
 ```
 
-### 7. crear movimiento "Realizar Retiro"
+### 3.3 crear movimiento "Realizar Retiro"
 ### Verificar si existe el numerocuenta "4".
 **Endpoint:** `POST http://localhost:8080/movimientos`
 
@@ -248,13 +248,13 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
   "tipoCuenta": "Ahorros"
 }
 ```
-### 8. Eliminar movimiento
+### 3.4 Eliminar movimiento
 
-### 8. Verificar si existe el movimiento "32"
+### Verificar si existe el movimiento "32"
 **Endpoint:** `DELETE http://localhost:8080/movimientos/32`
 
 
-### 7. Saldo no disponible
+### 3.5 Saldo no disponible
 ### Verificar si existe el numerocuenta "20" y valor inicial en cero.
 **Endpoint:** `POST http://localhost:8080/movimientos`
 
@@ -280,7 +280,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 
 ##
-### 8. Generar Reporte
+### 4. Generar Reporte
 ##
 
 
