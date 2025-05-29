@@ -10,9 +10,9 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 - PostgreSQL
 - JPA/Hibernate
 
-## 🚀 Operaciones de Clientes
+## 🚀 1. Operaciones de Clientes
 
-### 1. Crear Cliente
+### 1.1 Crear Cliente
 
 **Endpoint:** `POST http://localhost:8080/clientes`
 
@@ -52,7 +52,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 ```
 
 ## 
-### 2. Editar Cliente
+### 1.2 Editar Cliente
 ### Verificar si existe el cliente o el "id"
 
 **Ejemplo:** `PUT http://localhost:8080/clientes/9`
@@ -92,7 +92,7 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 }
 ```
 
-### 3. Eliminar Cliente
+### 1.3 Eliminar Cliente
 ### Verificar si existe el cliente o el "id"
 
 **Ejemplo:** `DELETE http://localhost:8080/clientes/8`
@@ -103,9 +103,9 @@ Proyecto microservicio Bancario desarrollado con Java y Maven que permite realiz
 
 
 
-## 📊 Operaciones de Cuentas
+## 📊2 Operaciones de Cuentas
 
-### 4. Crear Cuenta
+### 2.1 Crear Cuenta
 
 **Endpoint:** `POST http://localhost:8080/cuentas`
 
